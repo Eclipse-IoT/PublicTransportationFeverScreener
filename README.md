@@ -24,6 +24,8 @@ Transit staff and frequent passengers have no choice but to rely on public trans
 
 #### *Key benefits*
 
+**Keywords/Verticals:** 
+
 ## Architecture
 
 #### What components is the demo using?
