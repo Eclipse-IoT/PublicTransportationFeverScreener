@@ -21,3 +21,29 @@ The proposed solution consists of a simple IR thermal sensor collecting temperat
 #### *Why is this important?*
 
 Transit staff and frequent passengers have no choice but to rely on public transportation, and since maintaining a physical distance may be difficult on a crowded vehicle, identifying COVID-19 carriers through this contactless screening method may prove extremely beneficial in mitigating their risk of transmission. 
+
+#### *Key benefits*
+
+## Architecture
+
+#### What components is the demo using?
+
+###### Software Components
+- **[Eclipse Mosquitto](https://mosquitto.org/)**
+  - Lightweight MQTT broker 
+- **[Cedalo Management Center](https://mosquitto.org/)**
+  - Web based management of Mosquitto instances
+- **[Eclipse Paho](https://mosquitto.org/)**
+  - Used to implement MQTT clients
+
+**Hardware Components**
+- Raspberry Pi Model 3 B+
+- Computer/Laptop
+- AMG8833 Thermal Sensor
+- RC522 RFID Reader/Writer
+- 7 inch Touchscreen
+- 3D printed components 
+
+## Implementation
+
+## How to run
