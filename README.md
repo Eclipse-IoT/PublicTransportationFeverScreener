@@ -30,11 +30,11 @@ Transit staff and frequent passengers have no choice but to rely on public trans
 
 ###### Software Components
 - **[Eclipse Mosquitto](https://mosquitto.org/)**
-  - Lightweight MQTT broker 
-- **[Cedalo Management Center](https://mosquitto.org/)**
+  - MQTT broker implementation
+- **[Cedalo Management Center](https://docs.cedalo.com/latest/docs/management-center/mc-overview)**
   - Web based management of Mosquitto instances
-- **[Eclipse Paho](https://mosquitto.org/)**
-  - Used to implement MQTT clients
+- **[Eclipse Paho Python](https://www.eclipse.org/paho/index.php?page=clients/python/index.php)**
+  - Python implementation of Paho, used to implement MQTT clients
 
 **Hardware Components**
 - Raspberry Pi Model 3 B+
@@ -46,4 +46,37 @@ Transit staff and frequent passengers have no choice but to rely on public trans
 
 ## Implementation
 
+## Hardware Assembly
+
+##### 1) 3D print the parts 
+The parts are designed to be printed without needing supports, so ensure that the parts are correctly oriented on the buildplate. Printing is obviously optional, but it ensures that the thermal sensor is in a better position to detect your face. Otherwise, you may have to hold the sensor up to yourself with one hand , while also interacting with the RFID scanner with the other, which may prove difficult
+
+##### 2) Heat set the brass threaded inserts
+Position M3 brass threaded inserts into the holes of the RFIDHolder and the DisplayFront mounts, and gently press into place with a soldering iron
+
+#### 3) Fasten RC522 scanner into mount
+Using M3 screws, fasten the RC522 scanner into the RFIDHolder mount
+
+#### 4) Fasten AMG8833 and Raspberry Pi
+Using M2 screws and nuts, fasten the AMG8833 sensor to the top of the FrontDisplay mount, and the Raspberry Pi to the BackDisplay mount respectively
+
+#### 5) Fasten touchscreen, FrontDisplay, and BackDisplay mount together
+Place the touchscreen into the FrontDisplay mount, and sandwich the BackDisplay mount ontop of it, ensure that the holes are lined up correctly and screw them together using M3 screws
+
+#### 6) Wire the AMG8833 sensor accordingly
+- Sensor Vin to Pi 3v3
+- Sensor GND to Pi GND
+- Sensor SCL to Pi SCL
+- Sensor SDA to Pi SDA
+
+#### 7) Wire the RC522 scanner accordingly
+- Sensor 3v3 to Pi 3v3
+- Sensor RST to Pi GPIO 22
+- Sensor GND to Pi GND
+- Sensor MISO to Pi MISO
+- Sensor MOSI to Pi MOSI
+- Sensor SCK to Pi SCK
+- Sensor SDA to Pi SDA
+
 ## How to run
+
