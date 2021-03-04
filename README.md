@@ -86,25 +86,25 @@ Place the touchscreen into the FrontDisplay mount, and sandwich the BackDisplay 
 
 ## How to run
 
-##### 1) Ensure that you have Eclipse Mosquitto and Cedalo Management Center installed on your desired server machine
+### 1) Ensure that you have Eclipse Mosquitto and Cedalo Management Center installed on your desired server machine
 Follow the installation instructions for your desired machine from the following link: https://docs.cedalo.com/latest/docs/installation
 
-##### 2) Ensure that you have CircuitPython installed on your Raspberry Pi
+### 2) Ensure that you have CircuitPython installed on your Raspberry Pi
 Follow the instructions from the following link: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 
-##### 3) Ensure that you have Paho installed on your client devices
+### 3) Ensure that you have Paho installed on your client devices
 Can be installed easily using:
 ```bash
 pip install paho-mqtt
 ```
 
-#### 4) Launch Mosquitto and Management Center
+### 4) Launch Mosquitto and Management Center
 This can be done by launching the start.bat file included with your installation (for Windows). When successfully started, the Management Center will be visible on http://localhost:8088. 
 
-#### 5) Create Client security details
+### 5) Create Client security details
 Using the sidebar menu, navigate to the Client menu and create instances of clients with username and passwords for each client you are using
 
-#### 6) Launch Python scripts on their respective machines
+### 6) Launch Python scripts on their respective machines
 Launch BusFeverDetector.py on the Raspberry Pi, and BusServer.py on your server machine.
 
 
