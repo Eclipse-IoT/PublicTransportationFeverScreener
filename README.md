@@ -89,22 +89,26 @@ Place the touchscreen into the FrontDisplay mount, and sandwich the BackDisplay 
 ### 1) Ensure that you have Eclipse Mosquitto and Cedalo Management Center installed on your desired server machine
 Follow the installation instructions for your desired machine from the following link: https://docs.cedalo.com/latest/docs/installation
 
-### 2) Ensure that you have CircuitPython installed on your Raspberry Pi
+#### 2) Ensure that you have CircuitPython installed on your Raspberry Pi
 Follow the instructions from the following link: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 
-### 3) Ensure that you have Paho installed on your client devices
+#### 3) Ensure that you have Paho installed on your client devices
 Can be installed easily using:
 ```bash
 pip install paho-mqtt
 ```
 
-### 4) Launch Mosquitto and Management Center
+#### 4) Launch Mosquitto and Management Center
 This can be done by launching the start.bat file included with your installation (for Windows). When successfully started, the Management Center will be visible on http://localhost:8088. 
 
-### 5) Create Client security details
+#### 5) Create Client security details
 Using the sidebar menu, navigate to the Client menu and create instances of clients with username and passwords for each client you are using
 
-### 6) Launch Python scripts on their respective machines
-Launch BusFeverDetector.py on the Raspberry Pi, and BusServer.py on your server machine.
+#### 6) Launch Python scripts on their respective machines
+Launch BusFeverDetector.py on the Raspberry Pi, and BusServer.py on your server machine. You will know that the client has connected successfully to the broker when it returns the message "Connected with result code 0". The Pi will only prompt to check RFID cards once you are close enough to the thermal sensor and it verifies that you are safe. Every time a human is detected, a message of the temperature is published from the Pi to the server machine. When a successful transacation has occured, the Pi will publish a message of the time of transaction in seconds. If a fever is detected, a "Fever" message is published to the server machine. 
+
+
+***Note:*** you may find better results by tweaking the temperature values the sensor looks for. This can be done by adjusting the HUMANTEMP and FEVERTEMP variables in BusFeverDetector.py
+
 
 
