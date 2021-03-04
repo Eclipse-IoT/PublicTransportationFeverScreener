@@ -48,12 +48,16 @@ Transit staff and frequent passengers have no choice but to rely on public trans
 
 ## Implementation
 
+**Cloud Layer:**
+
+**Internet of Things Layer:**
+
 ## Hardware Assembly
 
-##### 1) 3D print the parts 
+#### 1) 3D print the parts 
 The parts are designed to be printed without needing supports, so ensure that the parts are correctly oriented on the buildplate. Printing is obviously optional, but it ensures that the thermal sensor is in a better position to detect your face. Otherwise, you may have to hold the sensor up to yourself with one hand , while also interacting with the RFID scanner with the other, which may prove difficult
 
-##### 2) Heat set the brass threaded inserts
+#### 2) Heat set the brass threaded inserts
 Position M3 brass threaded inserts into the holes of the RFIDHolder and the DisplayFront mounts, and gently press into place with a soldering iron
 
 #### 3) Fasten RC522 scanner into mount
@@ -81,4 +85,26 @@ Place the touchscreen into the FrontDisplay mount, and sandwich the BackDisplay 
 - Sensor SDA to Pi SDA
 
 ## How to run
+
+##### 1) Ensure that you have Eclipse Mosquitto and Cedalo Management Center installed on your desired server machine
+Follow the installation instructions for your desired machine from the following link: https://docs.cedalo.com/latest/docs/installation
+
+##### 2) Ensure that you have CircuitPython installed on your Raspberry Pi
+Follow the instructions from the following link: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
+
+##### 3) Ensure that you have Paho installed on your client devices
+Can be installed easily using:
+```bash
+pip install paho-mqtt
+```
+
+#### 4) Launch Mosquitto and Management Center
+This can be done by launching the start.bat file included with your installation (for Windows). When successfully started, the Management Center will be visible on http://localhost:8088. 
+
+#### 5) Create Client security details
+Using the sidebar menu, navigate to the Client menu and create instances of clients with username and passwords for each client you are using
+
+#### 6) Launch Python scripts on their respective machines
+Launch BusFeverDetector.py on the Raspberry Pi, and BusServer.py on your server machine.
+
 
